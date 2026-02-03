@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>For My Sister Divya</title>
+
+<style>
+    body {
+        margin: 0;
+        height: 100vh;
+        background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+        overflow: hidden;
+        font-family: 'Segoe UI', sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .card {
+        background: white;
+        width: 380px;
+        padding: 25px;
+        border-radius: 20px;
+        text-align: center;
+        box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+        animation: pop 1s ease;
+        z-index: 2;
+    }
+
+    @keyframes pop {
+        0% { transform: scale(0.5); opacity: 0; }
+        100% { transform: scale(1); opacity: 1; }
+    }
+
+    h1 {
+        color: #e63946;
+        margin-bottom: 10px;
+    }
+
+    p {
+        color: #444;
+        font-size: 16px;
+        line-height: 1.5;
+    }
+
+    .names {
+        margin-top: 15px;
+        font-weight: bold;
+        color: #555;
+    }
+
+    .heart {
+        font-size: 40px;
+        animation: beat 1.2s infinite;
+    }
+
+    @keyframes beat {
+        0%, 100% { transform: scale(1); }
+        50% { transform: scale(1.2); }
+    }
+
+    /* Rose petals */
+    .petal {
+        position: absolute;
+        top: -10%;
+        font-size: 20px;
+        animation: fall linear infinite;
+        opacity: 0.8;
+    }
+
+    @keyframes fall {
+        0% {
+            transform: translateX(0) rotate(0deg);
+        }
+        100% {
+            transform: translateX(100px) translateY(110vh) rotate(360deg);
+        }
+    }
+</style>
+</head>
+
+<body>
+
+<!-- Music -->
+<audio autoplay loop>
+    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+</audio>
+
+<div class="card">
+    <h1>Happy Valentine’s Week 🌹</h1>
+    <div class="heart">❤️</div>
+    <p>
+        Dear Divya,<br><br>
+        You’re not just my sister,  
+        you’re my forever best friend,  
+        secret-keeper, and smile-maker 😊  
+        <br><br>
+        May your days always bloom  
+        like these roses 💐
+    </p>
+    <div class="names">
+        — With lots of love,<br>
+        Poojan 💌
+    </div>
+</div>
+
+<script>
+    // Create rose petals
+    for (let i = 0; i < 25; i++) {
+        let petal = document.createElement("div");
+        petal.className = "petal";
+        petal.innerHTML = "🌹";
+        petal.style.left = Math.random() * 100 + "vw";
+        petal.style.animationDuration = (5 + Math.random() * 5) + "s";
+        document.body.appendChild(petal);
+    }
+</script>
+
+</body>
+</html>
